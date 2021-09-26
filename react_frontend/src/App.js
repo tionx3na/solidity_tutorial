@@ -19,10 +19,13 @@ class App extends Component {
     this.setState({firstContract})
     const getvalue = await firstContract.methods.get().call()
     this.setState({getvalue})
-    var value = this.state.newValue
-    if(value != '') {
-    this.firstContract.methods.set(value).send({from: this.state.account})
-    }
+  }
+
+  async valueSet(valuefromrender, firstContract) {
+    const value = valuefromrender
+    console.log(value)
+    const result = await firstContract.methods.set(value).send({from : this.state.account})
+    console.log(result)
   }
 
   updateValue(evt) {
@@ -31,9 +34,14 @@ class App extends Component {
     })
   }
 
+  refreshPage() {
+    window.location.reload(false);
+  }
+
   constructor(props) {
     super(props);
     this.state = {
+      firstContract: '',
       account: '',
       getvalue: '',
       newValue: ''
@@ -60,7 +68,9 @@ class App extends Component {
           <h6>
             Enter new value: <input value = {this.state.newValue} onChange = {evt => this.updateValue(evt)}/>
           </h6>
-          <button onClick = {this.loadBlockchainData}>Submit</button>
+          <button onClick = {() => this.valueSet(this.state.newValue, this.state.firstContract)}>Submit</button>
+          <br></br>
+          <button onClick={this.refreshPage}>Refresh</button>
         </header>
       </div>
     );
