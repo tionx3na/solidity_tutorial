@@ -1,0 +1,11 @@
+div.Home {
+    background-color: rgb(15, 59, 70);
+    height: 655px;
+    align-items: center;
+}
+
+h1.Home {
+    color: white;
+    align-items: center;
+    padding-top: 250px;
+}

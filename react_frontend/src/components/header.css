@@ -21,7 +21,7 @@ main {
 }
 
 header {
-    background: white;
+    background: aquamarine;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
     h1{
@@ -41,6 +41,7 @@ header {
             text-align: center;
             padding: 1em;
             position: relative;
+            color: black;
         }
 
       

@@ -34,8 +34,9 @@ class FirstContract extends Component {
     })
   }
 
-  refreshPage() {
-    window.location.reload(false);
+  async refresh(firstContract) {
+    const getvalue = await firstContract.methods.get().call()
+    this.setState({getvalue})
   }
 
   constructor(props) {
@@ -44,7 +45,8 @@ class FirstContract extends Component {
       firstContract: '',
       account: '',
       getvalue: '',
-      newValue: ''
+      newValue: '',
+      isLoad: false
     }
   }
 
@@ -70,7 +72,7 @@ class FirstContract extends Component {
           </h6>
           <button onClick = {() => this.valueSet(this.state.newValue, this.state.firstContract)}>Submit</button>
           <br></br>
-          <button onClick={this.refreshPage}>Refresh</button>
+          <button onClick={() => this.refresh(this.state.firstContract)}>Refresh</button>
         </header>
       </div>
     );
