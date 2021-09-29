@@ -1,6 +1,5 @@
-const rog_token = artifacts.require("./contracts/rog_token.sol");
+const RogToken = artifacts.require("./contracts/RogToken.sol");
 
 module.exports = function (deployer) {
-  deployer.deploy(rog_token);
+  deployer.deploy(RogToken);
 };
- 

@@ -1,4 +1,4 @@
-const RogToken = artifacts.require("./rog_token.sol");
+const RogToken = artifacts.require("./contracts/RogToken.sol");
 
 /*
  * uncomment accounts to access the test accounts made available by the
