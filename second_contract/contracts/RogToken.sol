@@ -2,14 +2,14 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 contract RogToken {
-    //constructor
-    //set the total number of tokens
-    //read the total number of tokens
 
     uint256 public totalSupply;
 
-    constructor() public {
-        totalSupply = 10000000; //1 crore tokens initialized
+    mapping(address => uint256) public balanceOf;
 
+    constructor(uint256 _initialSupply) public {
+        totalSupply = _initialSupply; //1 crore tokens initialized
+        //allocate the initial supply to an address
+        
     }
 }
