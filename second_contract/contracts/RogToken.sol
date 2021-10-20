@@ -6,6 +6,7 @@ contract RogToken {
     //Symbol
     string public name = "RogToken";
     string public symbol = "ROG";
+    uint8 public constant decimals = 18; // 18 is the maximum deciaml place of etherum
     uint256 public totalSupply;
 
     mapping(address => uint256) public balanceOf;
